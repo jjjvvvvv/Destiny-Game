@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'story_brain.dart';
 
@@ -35,10 +36,16 @@ class _StoryPageState extends State<StoryPage> {
               Expanded(
                 flex: 12,
                 child: Center(
-                  child: Text(
-                    storyBrain.getStory(),
-                    style: TextStyle(
-                      fontSize: 25.0,
+                  child: Card(
+                    elevation: 10,
+                    color: Colors.indigo,
+                    child: Text(
+                      storyBrain.getStory(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20.0,
+                      ),
                     ),
                   ),
                 ),
@@ -51,7 +58,8 @@ class _StoryPageState extends State<StoryPage> {
                       storyBrain.nextStory(1);
                     });
                   },
-                  color: Colors.red,
+                  // 600
+                  color: Colors.red[500],
                   child: Text(
                     storyBrain.getChoice1(),
                     style: TextStyle(
@@ -73,7 +81,8 @@ class _StoryPageState extends State<StoryPage> {
                         storyBrain.nextStory(2);
                       });
                     },
-                    color: Colors.blue,
+                    //blue 600
+                    color: Colors.blue[500],
                     child: Text(
                       storyBrain.getChoice2(),
                       style: TextStyle(
